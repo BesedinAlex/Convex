@@ -28,21 +28,19 @@ class Polygon extends Deq implements Figure {
         if (i > 0) {
             R2Point x;
             grow(back(), front(), t);
+            this.task += Math.pow(R2Point.distance(taskPoint, t), 2);
             for (x = popFront(); t.light(x, front()); x = popFront()) {
                 grow(x, front(), t);
                 this.task -= Math.pow(R2Point.distance(taskPoint, x), 2);
             }
             pushFront(x);
-            //this.task += Math.pow(R2Point.distance(taskPoint, front()), 2);
             for (x = popBack(); t.light(back(), x); x = popBack()) {
                 grow(back(), x, t);
                 this.task -= Math.pow(R2Point.distance(taskPoint, x), 2);
             }
             pushBack(x);
-            //this.task += Math.pow(R2Point.distance(taskPoint, back()), 2);
             p += R2Point.distance(back(), t) + R2Point.distance(t, front());
             pushFront(t);
-            this.task += Math.pow(R2Point.distance(taskPoint, front()), 2);
         }
         return this;
     }
