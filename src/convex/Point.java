@@ -1,5 +1,7 @@
 package convex;
 
+import java.util.ArrayList;
+
 public class Point implements Figure {
     private R2Point p, task;
     public Point(R2Point p, R2Point task) {
@@ -19,7 +21,7 @@ public class Point implements Figure {
     @Override public double result() {
         return Math.pow(R2Point.distance(p, task), 2);
     }
-    @Override public R2Point task() {
+    @Override public ArrayList<R2Point[]> task() {
         return null;
     }
 }

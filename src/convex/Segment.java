@@ -1,5 +1,7 @@
 package convex;
 
+import java.util.ArrayList;
+
 public class Segment implements Figure {
     private R2Point p, q, task;
     public Segment(R2Point p, R2Point q, R2Point task) {
@@ -22,7 +24,7 @@ public class Segment implements Figure {
     @Override public double result() {
         return Math.pow(R2Point.distance(task, p), 2) + Math.pow(R2Point.distance(task, q), 2);
     }
-    @Override public R2Point task() {
+    @Override public ArrayList<R2Point[]> task() {
         return null;
     }
 }

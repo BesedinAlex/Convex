@@ -1,9 +1,11 @@
 package convex;
 
+import java.util.ArrayList;
+
 interface Figure {
-    public Figure add(R2Point point, R2Point task);
-    public double perimeter();
-    public double area();
-    public double result();
-    public R2Point task();
+    Figure add(R2Point point, R2Point task);
+    double perimeter();
+    double area();
+    double result();
+    ArrayList<R2Point[]> task();
 }

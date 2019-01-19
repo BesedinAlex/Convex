@@ -1,5 +1,7 @@
 package convex;
 
+import java.util.ArrayList;
+
 public class Void implements Figure {
     public Figure add(R2Point p, R2Point task) {
         return new Point(p, task);
@@ -13,7 +15,7 @@ public class Void implements Figure {
     @Override public double result() {
         return 0;
     }
-    @Override public R2Point task() {
+    @Override public ArrayList<R2Point[]> task() {
         return null;
     }
 }

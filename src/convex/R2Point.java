@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class R2Point {
     private double x, y;
-    public R2Point(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
     public R2Point() throws Exception {
         Scanner in = new Scanner(System.in);
         System.out.print("x -> ");
@@ -33,5 +29,11 @@ public class R2Point {
     public boolean light(R2Point a, R2Point b) {
         double s = area(a, b, this);
         return s < 0.0 || (s == 0 && ! inside(a, b));
+    }
+    public double getX() {
+        return x;
+    }
+    public double getY() {
+        return y;
     }
 }
