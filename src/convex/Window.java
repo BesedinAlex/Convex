@@ -11,6 +11,7 @@ public class Window extends JFrame {
     public Window() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 800);
+        setResizable(false);
         pane.setLayout(new BorderLayout());
         JPanel renderPanel = new JPanel() {
             @Override public void paintComponent(Graphics g) {
@@ -23,7 +24,7 @@ public class Window extends JFrame {
                     for (int i = 1; i < points.size(); i++) path.lineTo(points.get(i).getX(), -points.get(i).getY());
                     path.closePath();
                     g2.draw(path);
-                    //g2.fill(path);
+                    g2.fill(path);
                 }
             }
         };
@@ -45,7 +46,7 @@ public class Window extends JFrame {
                 for (int i = 1; i < 3; i++) path.lineTo(point[i].getX(), -point[i].getY());
                 path.closePath();
                 g2.draw(path);
-                //g2.fill(path);
+                g2.fill(path);
             }
         };
         pane.add(renderPanel, BorderLayout.CENTER);
