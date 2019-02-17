@@ -10,11 +10,13 @@ public class Convex {
     public void add(R2Point point) {
         if (figure instanceof Polygon) {
             figure = figure.add(point, task);
-            for (int i = 0; i < figure.task().size(); i++) window.addPolygon(figure.task().get(i));
+            for (int i = 0; i < figure.task().size(); i++)
+                window.addPolygon(figure.task().get(i));
         } else {
             figure = figure.add(point, task);
             window.addPoint(point);
-            if (figure instanceof Segment || figure instanceof Polygon) window.repaint();
+            if (figure instanceof Segment || figure instanceof Polygon)
+                window.repaint();
         }
     }
     public double area() {

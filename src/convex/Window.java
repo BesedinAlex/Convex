@@ -21,7 +21,8 @@ public class Window extends JFrame {
                     g2.setColor(Color.red);
                     Path2D path = new Path2D.Double();
                     path.moveTo(points.get(0).getX(), -points.get(0).getY());
-                    for (int i = 1; i < points.size(); i++) path.lineTo(points.get(i).getX(), -points.get(i).getY());
+                    for (int i = 1; i < points.size(); i++)
+                        path.lineTo(points.get(i).getX(), -points.get(i).getY());
                     path.closePath();
                     g2.draw(path);
                     g2.fill(path);
@@ -43,7 +44,8 @@ public class Window extends JFrame {
                 g2.setColor(Color.red);
                 Path2D path = new Path2D.Double();
                 path.moveTo(point[0].getX(), -point[0].getY());
-                for (int i = 1; i < 3; i++) path.lineTo(point[i].getX(), -point[i].getY());
+                for (int i = 1; i < 3; i++)
+                    path.lineTo(point[i].getX(), -point[i].getY());
                 path.closePath();
                 g2.draw(path);
                 g2.fill(path);

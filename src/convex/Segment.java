@@ -10,9 +10,12 @@ public class Segment implements Figure {
         this.task = task;
     }
     @Override public Figure add(R2Point r, R2Point task) {
-        if (R2Point.isTriangle(p, q, r)) return new Polygon(p, q, r, task);
-        if (q.inside(p, r)) q = r;
-        if (p.inside(r, q)) p = r;
+        if (R2Point.isTriangle(p, q, r))
+            return new Polygon(p, q, r, task);
+        if (q.inside(p, r))
+            q = r;
+        if (p.inside(r, q))
+            p = r;
         return this;
     }
     @Override public double perimeter() {

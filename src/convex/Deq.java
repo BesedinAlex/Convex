@@ -5,10 +5,7 @@ public class Deq {
     private R2Point[] array;
     private int size, head, tail;
     public Deq() {
-        this(DEFSIZE);
-    }
-    public Deq(int size) {
-        array = new R2Point[size];
+        array = new R2Point[DEFSIZE];
         this.size = head = 0;
         tail = array.length - 1;
     }

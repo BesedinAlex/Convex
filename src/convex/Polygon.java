@@ -11,8 +11,7 @@ class Polygon extends Deq implements Figure {
         if (b.light(a, c)) {
             pushFront(a);
             pushBack(c);
-        } 
-        else {
+        } else {
             pushFront(c);
             pushBack(a);
         }

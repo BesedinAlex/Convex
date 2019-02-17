@@ -9,7 +9,8 @@ public class Point implements Figure {
         this.task = task;
     }
     @Override public Figure add(R2Point q, R2Point task) {
-        if (!R2Point.equal(p, q)) return new Segment(p, q, task);
+        if (!R2Point.equal(p, q))
+            return new Segment(p, q, task);
         else return this;
     }
     @Override public double perimeter() {
