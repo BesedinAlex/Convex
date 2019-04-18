@@ -1,34 +1,26 @@
 package convex;
 
-public class Convex {
-    private Figure figure;
-    private R2Point task;
-    private Window window = new Window();
-    public Convex() {
-        figure = new Void();
+import convex.geometry.Point;
+
+class Convex {
+    private convex.figure.Figure figure;
+    private convex.geometry.Point task;
+    Convex() throws Exception {
+        System.out.println("Enter task point");
+        task = new Point();
+        System.out.println("Enter convex points");
+        figure = new convex.figure.Void();
     }
-    public void add(R2Point point) {
-        if (figure instanceof Polygon) {
-            figure = figure.add(point, task);
-            for (int i = 0; i < figure.task().size(); i++)
-                window.addPolygon(figure.task().get(i));
-        } else {
-            figure = figure.add(point, task);
-            window.addPoint(point);
-            if (figure instanceof Segment || figure instanceof Polygon)
-                window.repaint();
-        }
+    void add(Point point) {
+        figure = figure.add(point, task);
     }
-    public double area() {
+    double area() {
         return figure.area();
     }
-    public double perimeter() {
+    double perimeter() {
         return figure.perimeter();
     }
-    public double result() {
+    double result() {
         return figure.result();
-    }
-    public void task(R2Point task) {
-        this.task = task;
     }
 }
