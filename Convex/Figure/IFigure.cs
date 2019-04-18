@@ -1,4 +1,6 @@
-﻿namespace Convex.Figure
+﻿using System;
+
+namespace Convex.Figure
 {
     interface IFigure
     {

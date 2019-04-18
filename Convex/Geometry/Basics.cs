@@ -1,4 +1,6 @@
-﻿namespace Convex.Geometry
+﻿using System;
+
+namespace Convex.Geometry
 {
     static class Basics
     {

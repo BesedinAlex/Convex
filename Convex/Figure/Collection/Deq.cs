@@ -1,4 +1,6 @@
-﻿namespace Convex.Figure.Collection
+﻿using System;
+
+namespace Convex.Figure.Collection
 {
     class Deq
     {
