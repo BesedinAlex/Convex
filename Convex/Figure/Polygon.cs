@@ -5,8 +5,8 @@ namespace Convex.Figure
 {
     public class Polygon : Points.Deq, IFigure
     {
-        private double perimeter;
-        private double area;
+        public double Perimeter { get; private set; }
+        public double Area { get; private set; }
 
         public Polygon(Geometry.Point a, Geometry.Point b, Geometry.Point c)
         {
@@ -21,14 +21,14 @@ namespace Convex.Figure
                 PushFront(c);
                 PushBack(a);
             }
-            perimeter = Basics.DistanceBetween(a, b) + Basics.DistanceBetween(b, c) + Basics.DistanceBetween(c, a);
-            area = Math.Abs(Basics.Area(a, b, c));
+            Perimeter = Basics.DistanceBetween(a, b) + Basics.DistanceBetween(b, c) + Basics.DistanceBetween(c, a);
+            Area = Math.Abs(Basics.Area(a, b, c));
         }
 
         private void Grow(Geometry.Point a, Geometry.Point b, Geometry.Point t)
         {
-            perimeter -= Basics.DistanceBetween(a, b);
-            area += Math.Abs(Basics.Area(a, b, t));
+            Perimeter -= Basics.DistanceBetween(a, b);
+            Area += Math.Abs(Basics.Area(a, b, t));
         }
 
         public IFigure Add(Geometry.Point t)
@@ -52,20 +52,12 @@ namespace Convex.Figure
                     Grow(Back, x, t);
                 }
                 PushBack(x);
-                perimeter += Basics.DistanceBetween(Back, t) + Basics.DistanceBetween(t, Front);
+                Perimeter += Basics.DistanceBetween(Back, t) + Basics.DistanceBetween(t, Front);
                 PushFront(t);
             }
             return this;
         }
 
-        public double Perimeter
-        {
-            get => perimeter;
-        }
-
-        public double Area
-        {
-            get => area;
-        }
+        
     }
 }

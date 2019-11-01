@@ -4,26 +4,26 @@ namespace Convex
 {
     internal class Convex
     {
-        private IFigure Figure { get; set; }
+        private IFigure figure;
 
         public Convex()
         {
-            Figure = new Void();
+            figure = new Void();
         }
 
         public void Add(Geometry.Point point)
         {
-            Figure = Figure.Add(point);
+            figure = figure.Add(point);
         }
 
         public double Area
         {
-            get => Figure.Area;
+            get => figure.Area;
         }
 
         public double Perimeter
         {
-            get => Figure.Perimeter;
+            get => figure.Perimeter;
         }
     }
 }
